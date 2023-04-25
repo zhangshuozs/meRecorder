@@ -1,0 +1,42 @@
+{
+  "name": "merecorder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron .",
+    "package": "electron-packager . ME录制 --out app --arch=x64 --overwrite -app-version=1.0 --icon=ME.ico",
+    "dist": "electron-builder"
+  },
+  "author": "zhangshuo",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^13.6.9"
+  },
+  "dependencies": {
+    "electron-log": "^4.4.8",
+    "electron-packager": "^15.5.1",
+    "ffmpeg-static-electron": "^2.0.3",
+    "fluent-ffmpeg": "^2.1.2",
+    "systeminformation": "^5.17.12",
+    "vue": "^2.7.14"
+  },
+  "build": {
+    "productName": "ME录制",
+    "directories": {
+      "output": "dist"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    },
+    "win": {
+      "target": [
+        {
+          "target": "nsis"
+        }
+      ]
+    }
+  }
+}
